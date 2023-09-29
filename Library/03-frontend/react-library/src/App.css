@@ -52,3 +52,9 @@ background-color: #0e76a8 ;
     pointer-events: none;
     cursor: default;
  }
+ .bg-custom-blue {
+    background-color: #007bff; /* Custom blue color */
+  }
+  .bg-custom-purple {
+    background-color: #6f42c1; /* Custom purple color */
+  }
