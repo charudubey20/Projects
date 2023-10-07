@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BookModel from "../../models/BookModel";
 import { SpinnerLoding } from "../Utils/SpinnerLoading";
+import { StarsReview } from "../Utils/StarsReview";
 
 export const BookCheckoutPage =() => {
     
@@ -78,6 +79,7 @@ if(httpError) {
                         <h2>{book?.title}</h2>
                         <h5 className="test-primary">{book?.author}</h5>
                         <p className="lead">{book?.description}</p>
+                    <StarsReview rating={4} size={32}/>
                     </div>
 
                 </div>
