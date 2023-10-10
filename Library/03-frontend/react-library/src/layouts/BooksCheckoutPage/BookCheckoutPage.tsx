@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import BookModel from "../../models/BookModel";
-import { SpinnerLoding } from "../Utils/SpinnerLoading";
+import { SpinnerLoading } from "../Utils/SpinnerLoading";
 import { StarsReview } from "../Utils/StarsReview";
 import { CheckoutAndReviewBox } from "./CheckoutAndReviewBox";
 import ReviewModel from "../../models/ReviewModel";
@@ -101,7 +101,7 @@ useEffect(()=> {
 
 if(isLoading || isLoadingReview) {
     return (
-       <SpinnerLoding/>
+       <SpinnerLoading/>
     )
 }
 

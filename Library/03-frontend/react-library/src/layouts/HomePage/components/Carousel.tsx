@@ -1,7 +1,7 @@
 import { ReturnBook } from "./ReturnBook";
 import { useEffect, useState } from "react";
 import BookModel from "../../../models/BookModel";
-import { SpinnerLoding } from "../../Utils/SpinnerLoading";
+import { SpinnerLoading } from "../../Utils/SpinnerLoading";
 import { Link } from "react-router-dom";
 
 export const Carousel = () => {
@@ -52,7 +52,7 @@ throw new Error('Something went wrong'!);
 
     if(isLoading) {
         return (
-           <SpinnerLoding/>
+           <SpinnerLoading/>
         )
     }
 
