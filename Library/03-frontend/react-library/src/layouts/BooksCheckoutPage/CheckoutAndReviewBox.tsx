@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
 import BookModel from "../../models/BookModel";
+import { LeaveAreview } from "../Utils/LeaveAReview";
 
 export const CheckoutAndReviewBox: React.FC<{book: BookModel | undefined, mobile: boolean,
-currentLoansCount: number, isAuthenticated:any, isCheckedOut: boolean }> =(props)=>
+currentLoansCount: number, isAuthenticated:any, isCheckedOut: boolean,
+checkoutBook:any, isReviewLeft: boolean, submitReview: any}> =(props)=>
 {
     function buttonRender() {
         if(props.isAuthenticated) {
             if(!props.isCheckedOut && props.currentLoansCount <5) {
-                return (<button className="btn btn-success btn-lg">Checkout</button>)
+                return (<button onClick={()=>props.checkoutBook()} className="btn btn-success btn-lg">Checkout</button>)
             } else if (props.isCheckedOut) {
-                return (<p><b>Book checked out. Enjoy</b></p>)
+                return (
+                <p>
+                    <b>Book checked out. Enjoy</b>
+                    </p>
+                    )
             }
             else if (!props.isCheckedOut) {
                 return (<p className="text-danger">Too many books checked out.</p>)
@@ -18,6 +24,24 @@ currentLoansCount: number, isAuthenticated:any, isCheckedOut: boolean }> =(props
         return (<Link to={'/login'} className="btn btn-success btn-lg">
         </Link>)
     }
+
+     function reviewRender() {
+        if (props.isAuthenticated && !props.isReviewLeft) {
+            return (
+            <p>
+                <LeaveAreview  submitReview={props.submitReview}/>
+            </p>
+            )
+        } else if (props.isAuthenticated && props.isReviewLeft) {
+            return(<p><b>Thank you for your review!</b></p>)
+        }
+        return (
+        <div>
+            <hr/>
+        Sign in to be able to leave a review
+        </div>)
+     }
+
     return (
         <div className={props.mobile ? 'card d-flex mt-5': 'card col-3 container d-flex mb-5'}>
             <div className="card-body conatiner">
@@ -51,9 +75,7 @@ currentLoansCount: number, isAuthenticated:any, isCheckedOut: boolean }> =(props
                 <p className="mt-3">
                     This number can change until placing order has been complete.
                 </p>
-                <p>
-                    Sign in to be able to leave a review.
-                </p>
+                {reviewRender()}
             </div>
 
         </div>

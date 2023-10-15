@@ -40,7 +40,7 @@ export const Navbar = () => {
               {!authState.isAuthenticated ?
 
               <li className='nav-item m-1'>
-                <a type='button' className='btn btn-outline-light' href='#'>Sign in</a>
+                <a type='button' className='btn btn-outline-light' href='/login'>Sign in</a>
               </li>
               :
               <li>
