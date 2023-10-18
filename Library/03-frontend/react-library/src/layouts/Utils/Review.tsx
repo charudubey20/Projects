@@ -25,7 +25,7 @@ export const Review: React.FC<{review: ReviewModel }>=(props) => {
                 </div>
 <div className="mt-2">
     <p>
-        {props.review.reviewdescription}
+        {props.review.reviewDescription}
     </p>
 
 </div>

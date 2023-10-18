@@ -97,7 +97,7 @@ useEffect(()=> {
                 date: responseData[key].date,
                 rating: responseData[key].rating,
                 book_id: responseData[key].bookId,
-                reviewdescription: responseData[key].reviewdescription
+                reviewDescription: responseData[key].reviewDescription
 
 
             });

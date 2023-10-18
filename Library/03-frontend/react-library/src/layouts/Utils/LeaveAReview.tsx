@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { StarsReview } from './StarsReview';
 
-export const LeaveAreview: React.FC<{ submitReview: any }> = (props) => {
+export const LeaveAReview: React.FC<{ submitReview: any }> = (props) => {
 
     const [starInput, setStarInput] = useState(0);
     const [displayInput, setDisplayInput] = useState(false);
